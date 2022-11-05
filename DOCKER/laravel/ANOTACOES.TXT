@@ -1,0 +1,14 @@
+docker run -it --name php php:7.4-cli bash
+apt-get update
+
+
+docker build -t talliny/laravel:latest .
+docker push talliny/laravel
+docker run --rm -d --name laravel -p 8000:8000 talliny/laravel
+
+
+docker ps
+docker rm -f laravel
+docker logs laravel
+
+docker images | grep laravel

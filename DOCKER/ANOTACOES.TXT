@@ -1,0 +1,6 @@
+docker run 
+docker build 
+docker push 
+docker ps
+docker rm -f 
+docker logs 
