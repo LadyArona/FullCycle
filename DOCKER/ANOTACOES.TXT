@@ -15,3 +15,6 @@ docker-compose up -d --build
 docker logs db
 
 docker exec -it app bash
+
+docker exec -it db bash
+mysql -uroot -p
