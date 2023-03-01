@@ -1,0 +1,3 @@
+DOCKER/mysql/auto.cnf
+DOCKER/mysql/ib_buffer_pool
+DOCKER/mysql/mysql.sock
