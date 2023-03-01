@@ -4,3 +4,10 @@ docker push
 docker ps
 docker rm -f 
 docker logs 
+
+docker-compose up
+docker-compose down
+docker-compose up -d
+docker-compose ps // lista
+
+docker-compose up -d --build
