@@ -12,3 +12,19 @@ docker rm -f laravel
 docker logs laravel
 
 docker images | grep laravel
+
+docker build -t talliny/nginx:prod . -f Dockerfile.prod
+docker network list
+docker network create laranet
+docker run -d --network laranet --name laravel talliny/laravel:prod
+
+docker run -d --network laranet --name nginx -p 8080:80 talliny/nginx:prod
+
+docker logs nginx
+
+docker rm -f laravel
+docker rm -f nginx
+
+docker build -t talliny/nginx:prod . -f Dockerfile.prod  
+docker build -t talliny/laravel:prod . -f Dockerfile.prod  
+
