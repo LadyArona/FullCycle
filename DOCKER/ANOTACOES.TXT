@@ -1,3 +1,12 @@
+sudo service docker start
+123456
+
+
+https://github.com/codeedu/wsl2-docker-quickstart
+
+https://github.com/devfullcycle/fc-devops-docker
+
+
 docker run 
 docker build 
 docker push 
