@@ -1,11 +1,7 @@
 FROM golang:latest
 
-WORKDIR /usr/local/go/src/app
-
-COPY /usr/local/go/src/go.mod /usr/local/go/src/go.sum /usr/local/go/src/app
-RUN go mod download && go mod verify
-
+WORKDIR /app
 COPY . .
-RUN go build -v -o /usr/local/bin/app ./...
+RUN go build -o main main.go
 
-CMD ["app"]
+CMD [ "/app/main" ]
